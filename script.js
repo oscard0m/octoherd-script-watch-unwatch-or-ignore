@@ -1,5 +1,5 @@
 /**
- * An octoherd script to watch, unwatch or ignore a repository
+ * An octoherd script to watch, unwatch or ignore repositories
  *
  * @param {import('@octoherd/cli').Octokit} octokit
  * @param {import('@octoherd/cli').Repository} repository
