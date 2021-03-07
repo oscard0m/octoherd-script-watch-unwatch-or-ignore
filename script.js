@@ -28,9 +28,6 @@ export async function script(octokit, repository, { unwatch, ignore }) {
 	octokit.log.debug(
 		{
 			change: 0,
-			id,
-			owner,
-			repo,
 		},
 		"subscribed: %s, ignored: %s, unwatch: %s, ignore: %s",
 		subscribed, ignored, unwatch, ignore
@@ -40,9 +37,6 @@ export async function script(octokit, repository, { unwatch, ignore }) {
 		octokit.log.debug(
 		{
 			change: 0,
-			id,
-			owner,
-			repo,
 		},
 		"No change for %s",
 		repository.html_url
@@ -64,9 +58,6 @@ export async function script(octokit, repository, { unwatch, ignore }) {
   octokit.log.info(
     {
       change: unwatch ? -1 : 1,
-      id,
-      owner,
-      repo,
     },
     "Subscription %s %s",
     unwatch ? "removed from" : "added to",
