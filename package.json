@@ -6,7 +6,7 @@
   "bin": {
     "octoherd-script-watch-unwatch-or-ignore": "./cli.js"
   },
-  "description": "An octoherd script to watch, unwatch or ignore a repository",
+  "description": "An octoherd script to watch, unwatch or ignore repositories",
   "scripts": {
     "start": "node cli.js",
     "test": "node script.js"
