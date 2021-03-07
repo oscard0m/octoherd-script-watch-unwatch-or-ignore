@@ -13,7 +13,9 @@ npx octoherd-script-watch-unwatch-or-ignore \
   "oscard0m/*"
 ```
 
-The script has no options
+Add `--ignore` flag to ignore notifications for selected repositories
+
+Add `--unwatch` flag to unwatch selected repositories
 
 ## Contributing
 
