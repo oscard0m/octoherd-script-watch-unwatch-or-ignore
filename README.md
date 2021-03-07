@@ -1,8 +1,21 @@
-# 🚧 WORK IN PROGRESS. See [#1](https://github.com/oscard0m/octoherd-script-watch-unwatch-or-ignore/pull/1)
-
 # octoherd-script-watch-unwatch-or-ignore
 
-> An octoherd script to watch, unwatch or ignore a repository
+> An octoherd script to watch, unwatch or ignore repositories
+
+[![@latest](https://img.shields.io/npm/v/octoherd-script-watch-unwatch-or-ignore.svg)](https://www.npmjs.com/package/octoherd-script-watch-unwatch-or-ignore)
+[![Build Status](https://github.com/oscard0m/octoherd-script-watch-unwatch-or-ignore/workflows/Test/badge.svg)](https://github.com/oscard0m/octoherd-script-watch-unwatch-or-ignore/actions?query=workflow%3ATest+branch%3Amain)
+
+## Usage
+
+```js
+npx octoherd-script-watch-unwatch-or-ignore \
+  --octoherd-token 0123456789012345678901234567890123456789 \
+  "oscard0m/*"
+```
+
+Add `--ignore` flag to ignore notifications for selected repositories
+
+Add `--unwatch` flag to unwatch selected repositories
 
 ## Contributing
 
