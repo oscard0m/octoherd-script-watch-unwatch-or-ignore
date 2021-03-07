@@ -7,8 +7,7 @@
  */
 export async function script(octokit, repository, { unwatch, ignore }) {
 	if (unwatch && ignore) {
-		octokit.log.error("Not possible tu unsubscribe and subscribe ignoring notifications")
-		return;
+		throw new Error("Use either --unwatch or --ignore, not both")
 	}
 	
 	const method = unwatch ? "DELETE" : "PUT";
