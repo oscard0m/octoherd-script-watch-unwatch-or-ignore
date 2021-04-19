@@ -7,15 +7,29 @@
 
 ## Usage
 
+Minimal usage
+
 ```js
-npx octoherd-script-watch-unwatch-or-ignore \
-  --octoherd-token 0123456789012345678901234567890123456789 \
-  "oscard0m/*"
+npx octoherd-script-watch-unwatch-or-ignore
 ```
 
-Add `--ignore` flag to ignore notifications for selected repositories
+Pass all options as CLI flags to avoid user prompts
 
-Add `--unwatch` flag to unwatch selected repositories
+```
+npx octoherd-script-watch-unwatch-or-ignore \
+  -T ghp_0123456789abcdefghjklmnopqrstuvwxyzA \
+  -R "oscard0m/*"
+```
+
+## Options
+
+| option                       | type             | description                                                                                                                                                                                                                                 |
+| ---------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--unwatch`                  | string           | Stop watching repository                                                                                                                                                                                                                    |
+| `--ignore`                   | string           | Ignore all notifications                                                                                                                                                                                                                    |
+| `--octoherd-token`, `-T`     | string           | A personal access token ([create](https://github.com/settings/tokens/new?scopes=repo)). Script will create one if option is not set                                                                                                         |
+| `--octoherd-repos`, `-R`     | array of strings | One or multiple space-separated repositories in the form of `repo-owner/repo-name`. `repo-owner/*` will find all repositories for one owner. `*` will find all repositories the user has access to. Will prompt for repositories if not set |
+| `--octoherd-bypass-confirms` | boolean          | Bypass prompts to confirm mutating requests                                                                                                                                                                                                 |
 
 ## Contributing
 
