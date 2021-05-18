@@ -7,7 +7,7 @@
  */
 export async function script(octokit, repository, { unwatch, ignore }) {
 	if (unwatch && ignore) {
-		throw new Error("Use either --unwatch or --ignore, not both")
+		throw new Error("Combination of flags not allowed. Use either --unwatch or --ignore, not both")
 	}
 	
 	const method = unwatch ? "DELETE" : "PUT";
