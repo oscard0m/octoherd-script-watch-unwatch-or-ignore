@@ -10,6 +10,7 @@ export async function script(octokit, repository, { unwatch, ignore }) {
 		throw new Error("Combination of flags not allowed. Use either --unwatch or --ignore, not both")
 	}
 	
+	const subscribe = !ignore && !unwatch
 	const method = unwatch ? "DELETE" : "PUT";
 	const id = repository.id;
 	const owner = repository.owner.login;
@@ -24,16 +25,17 @@ export async function script(octokit, repository, { unwatch, ignore }) {
 			({ data: { subscribed, ignored } }) => ({ subscribed, ignored }),
 			() => ({ subscribed: false, ignored: false })
 	);
+	const unsubscribed = !subscribed && !ignored
 	
 	octokit.log.debug(
 		{
 			change: 0,
 		},
 		"subscribed: %s, ignored: %s, unwatch: %s, ignore: %s",
-		subscribed, ignored, unwatch, ignore
+		subscribed, ignored, !!unwatch, !!ignore
 	);
 	
-	if ((unwatch && !subscribed) || (!unwatch && subscribed) || (ignored && ignore)) {
+	if ((subscribed && subscribe) || (ignored && ignore) || (unsubscribed && unwatch)) {
 		octokit.log.debug(
 		{
 			change: 0,
